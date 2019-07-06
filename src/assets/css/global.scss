@@ -1,0 +1,33 @@
+@import './reset.scss';
+$rem: 750/20;
+@function px2rem($px){
+  @return $px/$rem +rem
+}
+.clearfix{
+  *zoom: 1;
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.page{
+  height: calc(100vh - #{px2rem(200)});
+  overflow: hidden;
+}
+.page-list-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f3f4f9;
+  z-index: 9999;
+}
+.slide-enter-active,.slide-leave-active{
+  transition: all 0.3s
+}
+.slide-enter,.slide-leave-to{
+  transform: translate3d(100%,0,0)
+}
